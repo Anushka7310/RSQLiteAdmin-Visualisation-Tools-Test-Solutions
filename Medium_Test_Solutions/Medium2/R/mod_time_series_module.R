@@ -12,7 +12,10 @@ mod_time_series_module_ui <- function(id){
   ns <- NS(id)
   tagList(
        fluidRow(
-            selectInput(ns("countryName"), choices=choices$`Country/Region`, selected = "India", label="Select Country"),
+            div(
+                 selectInput(ns("countryName"), choices=choices$`Country/Region`, selected = "India", label="Select Country"),
+                 style="display: flex;align-items: center;justify-content: center;"
+            ),
             uiOutput(ns("plot")),
 
        )
